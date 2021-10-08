@@ -4,6 +4,7 @@ import {
   VStack,
   CheckIcon,
   Center,
+  NativeBaseProvider,
 } from "native-base";
 export const SelectMovies = (props) => {
   let [service, setService] = React.useState("");

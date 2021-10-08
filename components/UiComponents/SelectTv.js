@@ -6,17 +6,16 @@ import {
   Center,
   NativeBaseProvider,
 } from "native-base";
-export const SelectTv = (props) => {
+
+export const SelectTv = ({ changed }) => {
   let [service, setService] = React.useState("");
   return (
-    <Center m={'1rem'}>
-
-
     <VStack alignItems="center" space={4}>
       <Select
         selectedValue={service}
         minWidth="200"
-        defaultValue="popular"
+        accessibilityLabel="Choose Service"
+        defaultValue="now_playing"
         _selectedItem={{
           bg: "teal.600",
           endIcon: <CheckIcon size="5" />,
@@ -24,7 +23,7 @@ export const SelectTv = (props) => {
         mt={1}
         onValueChange={(itemValue) => {
           setService(itemValue);
-          props.changed(itemValue);
+          changed(itemValue);
         }}
       >
         <Select.Item label="airing today" value="airing_today" />
@@ -33,8 +32,6 @@ export const SelectTv = (props) => {
         <Select.Item label="top rated" value="top_rated" />
       </Select>
     </VStack>
-  </Center>
-
   );
 };
 

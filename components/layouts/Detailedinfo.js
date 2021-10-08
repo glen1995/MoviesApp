@@ -1,31 +1,42 @@
-import { VStack,Image, HStack, Center } from 'native-base'
+import { VStack,Image, HStack, Container,Center } from 'native-base'
 import React from 'react'
-import { StyleSheet, Text, View } from 'react-native'
+import { StyleSheet, Text } from 'react-native'
+import { width } from 'styled-system';
 
 const Detailedinfo = ({data}) => {
-    console.log(data)
     return (
-        <Center flex={1} >
-      <VStack p={50}>
-          <Center>
-        <Text>{data.title ? data.title : data.original_name}</Text>
-        <Image
+      <Container  style={styles.contain}>
+      <VStack>
+        <Center>
+        <Text style={{fontWeight:'bold',fontSize:'1rem',paddingBottom:'1.5rem',paddingTop:'.5rem'}}>{data.title ? data.title : data.original_name}</Text></Center>
+        <Center paddingBottom={'.5rem'}><Image style={{textAlign:'center'}}
           source={{
             uri: `https://image.tmdb.org/t/p/original${data.poster_path}`,
           }}
           alt={data.title ? data.title : data.original_name}
-          size="lg"
-        />
-        <Text>{data.overview}</Text>
-        <HStack>
+          size="2xl"
+        /></Center>
+        <Text style={styles.aligntoImage}>{data.overview}</Text>
+        <HStack style={{maxWidth:'256px'}}>
           <Text>Popularity: {data.popularity}</Text>|<Text>Release date: {data.release_date}</Text>
         </HStack>
-        </Center>
       </VStack>
-      </Center>
+      </Container>
     );
 }
 
 export default Detailedinfo
 
-const styles = StyleSheet.create({})
+const styles = StyleSheet.create({
+  'contain':{
+marginLeft:'auto',
+marginRight:'auto'
+  },
+  aligntoImage:{
+    maxWidth:'256px',
+    marginLeft:'auto',
+    marginRight:'auto',
+    paddingTop:'.5rem',
+    paddingBottom:'1rem'
+  }
+})
