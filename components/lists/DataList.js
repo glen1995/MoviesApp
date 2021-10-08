@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigation,useRoute} from "@react-navigation/native";
 import {
   SafeAreaView,
   View,
@@ -12,8 +13,9 @@ import ListItem from "../listitems/ListItem";
 
 
 const DataList = ({ data }) => {
-  const renderItem = ({ item }) => <ListItem items={item}/>;
-
+  const navigation=useNavigation()
+  const route=useRoute()
+  const renderItem = ({ item }) => <ListItem items={item} nav={navigation} rout={route}/>;
   return (
     <View style={styles.container}>
       <FlatList

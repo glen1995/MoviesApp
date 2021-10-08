@@ -1,10 +1,10 @@
 {
   "devToolsPort": 19002,
   "expoServerPort": null,
-  "packagerPort": null,
-  "expoServerNgrokUrl": null,
-  "packagerNgrokUrl": null,
-  "ngrokPid": null,
+  "packagerPort": 19000,
+  "expoServerNgrokUrl": "https://wr-sab.anonymous.moviesapp.exp.direct",
+  "packagerNgrokUrl": "https://packager.wr-sab.anonymous.moviesapp.exp.direct",
+  "ngrokPid": 66035,
   "webpackServerPort": null,
   "packagerPid": null
 }

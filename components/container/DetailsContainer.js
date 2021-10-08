@@ -1,4 +1,4 @@
- import React from 'react'
+import React from 'react'
  import { StyleSheet, Text, View } from 'react-native'
  import Detailedinfo from '../layouts/Detailedinfo'
 import detailsRequest from '../service/detailsapi'
@@ -16,4 +16,3 @@ import detailsRequest from '../service/detailsapi'
  export default DetailsContainer
  
  const styles = StyleSheet.create({})
- 
